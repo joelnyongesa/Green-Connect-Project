@@ -2,16 +2,22 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './Home';
 import {Route, Routes } from 'react-router-dom';
+import Login from './Login';
+import Register from './Register';
+import Header from './Header';
+import Hero from './Hero';
 function App() {
   return (
     <div className="App">
+      <Header/>
+      <Hero/>
       <Routes>
         <Route path='/' element = {<Home/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
       </Routes>
-      <Home/>
+  
     </div>
   );
 }
