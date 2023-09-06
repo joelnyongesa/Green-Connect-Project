@@ -3,7 +3,7 @@ import Header from "./Header";
 import Hero from "./Hero";
 const Home = () => {
     return (
-        <div>
+        <div className="main-container">
             <Header/>
             <div className="navbar">
                 <div className="navbar-txt">
