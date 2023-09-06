@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Register = () => {
     return ( 
@@ -6,13 +6,13 @@ const Register = () => {
             <form className="login">
                 <h3>Register</h3>
                 <div>
-                    <input type="email" placeholder="Enter email"/>
+                    <input type="email" placeholder="Enter email" required />
                 </div>
                 <div>
-                    <input type="password" placeholder="Set password"/>
+                    <input type="password" placeholder="Set password" required />
                 </div>
                 <div>
-                    <input type="password" placeholder="Confirm password"/>
+                    <input type="password" placeholder="Confirm password" required />
                 </div>
                 <button className="button" type="submit">Register</button>
             </form>
