@@ -46,6 +46,8 @@ function Main(){
                         objectFit='cover'
                         src={post.image}
                         alt='post'
+                        width={'100%'}
+                        borderRadius={'0.5rem'}
                         />
                     </CardBody>
                     <CardFooter
