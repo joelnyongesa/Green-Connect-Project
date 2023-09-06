@@ -1,8 +1,8 @@
 const Header = () => {
     return (
-        <div>
-            <h2>GREEN CONNECT</h2>
-            <h4>Connecting Minds, Changing Climates</h4>
+        <div className="header">
+            <h2 className="header-title">GREEN CONNECT</h2>
+            <h4 className="header-txt">Connecting Minds, Changing Climates</h4>
         </div>
       );
 }
