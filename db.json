@@ -1,18 +1,18 @@
 {
-    "users":[
+    "user_details":[
         {
             "id": 1,
             "username": "johndoe",
             "profile_picture": "https://images.pexels.com/photos/9740364/pexels-photo-9740364.jpeg?auto=compress&cs=tinysrgb&w=1600",
             "location": "Nairobi, Kenya",
-            "rank": "ranger"
+            "rank": "Ranger"
         },
         {
             "id": 2,
             "username": "janedoe",
             "profile_picture": "https://images.pexels.com/photos/9303069/pexels-photo-9303069.jpeg?auto=compress&cs=tinysrgb&w=1600",
             "location": "Nairobi, Kenya",
-            "rank": "ranger"
+            "rank": "Ranger"
         }
     ],
     "posts":[

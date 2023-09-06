@@ -9,7 +9,7 @@ import Feed from './Feed';
 function App() {
   return (
     <ChakraProvider>
-      <div className="App">
+      <div className="">
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
