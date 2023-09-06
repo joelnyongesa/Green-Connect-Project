@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FormControl, FormLabel, Input, Button, Heading, Flex } from "@chakra-ui/react";
 
 const Register = () => {
     const[email, setEmail] = useState('')
@@ -8,7 +9,11 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleRegistration = ()=>{
+
+    console.log(email, password, confirmPassword);
+
+    const handleRegistration = (e)=>{
+        e.preventDefault();
         if (password===confirmPassword){
             alert('registration successful')
             navigate('/login')
@@ -18,21 +23,28 @@ const Register = () => {
     }
 
     return ( 
-        <div className="register">
-            <form className="login" onSubmit={handleRegistration}>
-                <h3>Register</h3>
-                <div>
-                    <input type="email" value={email} placeholder="Enter email" onChange={(e)=>setEmail(e.target.value)}/>
-                </div>
-                <div>
-                    <input type="password" value={password} placeholder="Set password" onChange={(e)=>setPassword(e.target.value)}/>
-                </div>
-                <div>
-                    <input type="password" placeholder="Confirm password" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}/>
-                </div>
-                <button className="button"  type="submit">Register</button>
+        <Flex 
+        flexDirection={'column'} 
+        alignItems={'center'} 
+        justifyContent={'center'} 
+        width={'100vh'} 
+        height={'100vh'} 
+        margin={'auto'}
+        >
+            <form onSubmit={handleRegistration}>
+                <FormControl isRequired>
+                    <Heading textAlign={'center'}>Register</Heading>
+                    <FormLabel>Email</FormLabel>
+                    <Input type="email" placeholder='email@example.com' value={email} onChange={(e)=>setEmail(e.target.value)} />
+                    <FormLabel>Password</FormLabel>
+                    <Input type="password" placeholder='password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                    <FormLabel>Confirm Password</FormLabel>
+                    <Input type="password" placeholder='retype password' value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)} mb={'1em'}/>
+                    <Button type="submit" colorScheme="#1D3C34" variant={'outline'}>Sign Up</Button>
+                </FormControl>
             </form>
-        </div>
+        </Flex>
+        
     );
 }
 
