@@ -83,6 +83,7 @@
 .hero{
   display: flex;
   padding: 5px;
+  background: #fff;
   
 }
 
@@ -105,7 +106,13 @@
 
 }
 
+body{
+  background-color: #1D3C34;
+}
 
+.main-container{
+  background: #f0f0f0;
+}
 .header{
   background: #1d3c34;
 }
@@ -118,14 +125,28 @@
   color: #c2e189;
 }
 
-.navbar{
-  background: #f0f0f0 ;
-}
-
-.navbar-txt{
+/* .navbar-txt{
   color: #c2e189;
   display: flex;
   justify-content: space-around;
+}  */
+
+.regbtn {
+    width: 100px;
+    height: 25px;
+    flex-shrink: 0;
+    border-radius: 100.5px;
+    border: 3px solid rgba(255, 255, 255, 0.60);
+    background: #c2e189;
+
 }
 
+.loginbtn {
+  width: 100px;
+  height: 25px;
+  flex-shrink: 0;
+  border-radius: 100.5px;
+  border: 3px solid rgba(255, 255, 255, 0.60);
+  background: #c2e189;
 
+}

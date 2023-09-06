@@ -1,17 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
 import Header from "./Header";
 import Hero from "./Hero";
+import './index.css';
 const Home = () => {
     return (
-        <div>
-            <button><Link to= "/register">Register</Link></button>
-            <button><Link to= "/login">Login</Link></button>
-
+        <div className="main-container">
             <Header/>
             <div className="navbar">
                 <div className="navbar-txt">
-                    <button><Link to= "/register">Register</Link></button>
-                    <button><Link to= "/login">Login</Link></button>
+                    <button className="regbtn"><Link to= "/register">Register</Link></button>
+                    <button className="loginbtn"><Link to= "/login">Login</Link></button>
                 </div>
             </div>
             <Outlet></Outlet>
