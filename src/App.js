@@ -1,21 +1,20 @@
+import logo from './logo.svg';
 import './App.css';
+import Home from './Home';
+import { Route, Routes } from 'react-router-dom';
 import Login from './Login';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
 import Register from './Register';
-
 
 function App() {
   return (
-  
-      <div className="App">
-        <div className="content">
-          {/* <Routes> */}
-            {/* <Login />  */}
-            <Register />
-          {/* </Routes> */}
-        </div>
-      </div>
-  
+    <div className="App">
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+      </Routes>
+    </div>
   );
 }
 
