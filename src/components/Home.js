@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom";
 import Header from "./Header";
 import Hero from "./Hero";
