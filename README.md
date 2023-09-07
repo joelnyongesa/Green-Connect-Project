@@ -6,4 +6,4 @@
 4. Run `npm run server` to start the JSON server.
 
 
-[The site is deployed here](https://vercel.com/victorwanjala/green-connect)
+[The site is deployed here]([https://vercel.com/victorwanjala/green-connect](https://green-connect-sage.vercel.app/)https://green-connect-sage.vercel.app/)
