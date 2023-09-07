@@ -8,10 +8,9 @@ import { isDisabled } from '@testing-library/user-event/dist/utils';
 function Main({posts}){
     const [buttonActive, setButtonActive] = useState(false)
 
-    function handleDisableBtn(){
-        setButtonActive(!buttonActive)
-        
-    }
+    function handleDisableBtn(postId) {
+        setButtonActive({ ...buttonActive, [postId]: !buttonActive[postId] });
+      }
 
     return(
         <>
@@ -56,11 +55,11 @@ function Main({posts}){
                         },
                     }}
                     >
-                        <Button 
-                        variant="ghost" 
-                        leftIcon={<BiLike/>} 
-                        onClick={handleDisableBtn}
-                        isDisabled={buttonActive ? true : false}
+                        <Button
+                        variant="ghost"
+                        leftIcon={<BiLike />}
+                        onClick={() => handleDisableBtn(post.id)}
+                        isDisabled={buttonActive[post.id] ? true : false}
                         >{post.likes} Likes</Button>
                         <Button variant="ghost" leftIcon={<BiChat/>}>{(post.comments.length)} Comments</Button>
                         <Button variant="ghost" leftIcon={<BiShare/>}> Share</Button>
