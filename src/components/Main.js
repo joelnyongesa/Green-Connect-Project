@@ -2,16 +2,31 @@ import {Card, Button, CardHeader, CardBody, CardFooter,Image, Flex, Avatar, Box,
 import {HiUser, HiDotsVertical} from "react-icons/hi"
 import {BiLike, BiChat, BiShare} from 'react-icons/bi'
 
-import { useEffect, useState } from "react";
-import { isDisabled } from '@testing-library/user-event/dist/utils';
+import { useEffect, useState, useRef } from "react";
 
 function Main({posts}){
     const [buttonActive, setButtonActive] = useState(false)
+    const [noOfLikes, setNoOfLikes] = useState({})
+    
 
-    function handleDisableBtn(){
-        setButtonActive(!buttonActive)
-        
-    }
+    function handleDisableBtn(postId, noOfLikes) {
+        const newLikes = noOfLikes + 1
+        setButtonActive({ ...buttonActive, [postId]: !buttonActive[postId] });
+        setNoOfLikes({ ...noOfLikes, [postId]: newLikes });
+        // console.log(likes)
+        fetch(`http://localhost:8000/posts/${postId}`,
+        {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                likes: newLikes
+            })
+        })
+        .then(r=>r.json())
+      }
+
 
     return(
         <>
@@ -56,12 +71,15 @@ function Main({posts}){
                         },
                     }}
                     >
-                        <Button 
-                        variant="ghost" 
-                        leftIcon={<BiLike/>} 
-                        onClick={handleDisableBtn}
-                        isDisabled={buttonActive ? true : false}
-                        >{post.likes} Likes</Button>
+                        <Button
+                        variant="ghost"
+                        leftIcon={<BiLike />}
+                        onClick={() => {
+                            handleDisableBtn(post.id, post.likes); 
+                            }
+                        }
+                        isDisabled={buttonActive[post.id] ? true : false}
+                        >{noOfLikes[post.id] || post.likes} Likes</Button>
                         <Button variant="ghost" leftIcon={<BiChat/>}>{(post.comments.length)} Comments</Button>
                         <Button variant="ghost" leftIcon={<BiShare/>}> Share</Button>
                     </CardFooter>
