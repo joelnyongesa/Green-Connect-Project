@@ -15,13 +15,14 @@ const[caption, setCaption] = useState('')
 
         const newPost = {
             user: userObject.username,
+            phonenumber : userObject.phonenumber,
             image:image,
             caption:caption,
             likes: 0,
             comments: []
         }
 
-        fetch(' http://localhost:8000/posts', {
+        fetch(' https://greenapp-api.onrender.com/posts', {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newPost)
@@ -34,11 +35,11 @@ const[caption, setCaption] = useState('')
     
     
     return(
-        <form onSubmit={handlePostSubmit} spacing={3} >
-            <Stack spacing={3} >
-            <Textarea required placeholder='What have you done today?' onChange={(e)=>setCaption(e.target.value)}/>
-            <Input type="url" placeholder="Image address"  width='40%'onChange={(e)=>setImage(e.target.value)}/>
-            </Stack>
+        <form onSubmit={handlePostSubmit} >
+            <Flex>
+                <Textarea placeholder='What have you done today?' onChange={(e)=>setCaption(e.target.value)}/>
+                <Input type="url" placeholder="image address" onChange={(e)=>setImage(e.target.value)}/>
+            </Flex>
             <Flex margin='10px' justifyContent="space-evenly">
                <Button type="submit">POST</Button>
                

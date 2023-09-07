@@ -1,8 +1,8 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Header from "./Header";
 import Hero from "./Hero";
 import './index.css';
-import { Flex, Heading, Text, Button } from "@chakra-ui/react";
+import { Flex, Heading, Button } from "@chakra-ui/react";
 
 
 const Home = () => {

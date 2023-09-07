@@ -27,7 +27,7 @@ const Register = ({onAddNewUser}) => {
             password: password
         }
 
-        fetch(' http://localhost:8000/user_details', {
+        fetch(' https://greenapp-api.onrender.com/user_details', {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newUser)
