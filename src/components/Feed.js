@@ -36,7 +36,7 @@ function Feed({user}){
             <GridItem p='10px' bg='#1D3C34' area={'new-post'} color={'#ffffff'} borderRadius={'0.5rem'}>
                 <NewPost onAddPost = {handleAddPost} userObject={user} />
             </GridItem>
-            <GridItem pl='2' bg='#1D3C34' area={'nav'} position={'fixed'} height={'80vh'} width={'25%'} borderRadius={'0.4rem'} mt={'4rem'} >
+            <GridItem pl='2' bg='#1D3C34' area={'nav'} position={'fixed'} height={'80%'} width={'25%'} borderRadius={'0.4rem'} mt={'4rem'} >
             <Flex
                 flexDirection="column"
                 justifyContent="center"

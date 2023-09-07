@@ -14,8 +14,8 @@ const Home = () => {
                     <Button colorScheme="#1D3C34" variant={'outline'} margin={'0.5rem'}><Link to= "/register">Register</Link></Button>
                     <Button colorScheme="#1D3C34" variant={'outline'} margin={'0.5rem'}><Link to= "/login">Login</Link></Button>
                 </Flex>
-                <Flex background={'#ffffff'} height={'82%'}  margin={'1rem'}>
-                    <Hero />
+                <Flex height={'82%'}  margin={'1rem'}>
+                    <Hero/>
                 </Flex>
            </Flex>
         </Flex>

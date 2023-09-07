@@ -1,10 +1,10 @@
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Flex, Image, Text, Stack} from "@chakra-ui/react";
 
 
 const Hero = () => {
     return ( 
 
-        <Flex >
+        <Stack direction={'row'}>
             <Image 
             src="https://images.pexels.com/photos/17330682/pexels-photo-17330682/free-photo-of-reforestation.png?auto=compress&cs=tinysrgb&w=1600&lazy=load"
             objectFit={'contain'}
@@ -15,7 +15,7 @@ const Hero = () => {
                     Green Connect: Connecting the world for a greener future. Join us in inspiring change, sharing ideas, and taking action for a sustainable planet. Together, we make a difference. Welcome to the green revolution</Text>
             </Flex>
 
-        </Flex>
+        </Stack>
         // <div className="hero">
         //     <img src = "https://images.pexels.com/photos/17330682/pexels-photo-17330682/free-photo-of-reforestation.png?auto=compress&cs=tinysrgb&w=1600&lazy=load" className="hero-img" alt="Go green"/>
         //     <div className="hero-txt">
