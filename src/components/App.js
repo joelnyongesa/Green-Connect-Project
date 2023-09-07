@@ -22,7 +22,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/login' element={<Login newuser={newuser}/>}  />
           <Route path='/register' element={<Register onAddNewUser={handleAddUser}/>} />
-          <Route path='feed' element={<Feed user={newuser}/>}/>
+          <Route path='/feed' element={<Feed user={newuser}/>}/>
         </Routes>
       </div>
     </ChakraProvider>
