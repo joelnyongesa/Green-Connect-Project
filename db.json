@@ -1,28 +1,74 @@
 {
-    "users":[
-        {
-            "id": 1,
-            "username": "johndoe",
-            "profile_picture": "https://images.pexels.com/photos/9740364/pexels-photo-9740364.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            "location": "Nairobi, Kenya",
-            "rank": "ranger"
-        },
-        {
-            "id": 2,
-            "username": "janedoe",
-            "profile_picture": "https://images.pexels.com/photos/9303069/pexels-photo-9303069.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            "location": "Nairobi, Kenya",
-            "rank": "ranger"
-        }
-    ],
-    "posts":[
-        {
-            "id":"1",
-            "image": "https://nnmedia.nation.africa/uploads/2023/09/Cover-2023-09-04T132146.126.png",
-            "caption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            "likes": 10,
-            "comments": ["Great job!", "Wow!"]
-            
-        }
-    ]
+  "user_details": [
+    {
+      "id": 1,
+      "username": "johndoe",
+      "phonenumber": "254700794573",
+      "rank": "Ranger",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "username": "janedoe",
+      "phonenumber": "254700794573",
+      "rank": "Ranger"
+    },
+    {
+      "username": "johndoe",
+      "phonenumber": "254700794573",
+      "password": "1234",
+      "id": 3
+    },
+    {
+      "username": "test@user.com",
+      "phonenumber": "254705669144",
+      "password": "1234",
+      "id": 4
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "user": "joeln",
+      "image": "https://nnmedia.nation.africa/uploads/2023/09/Cover-2023-09-04T132146.126.png",
+      "caption": "Joined President Ruto today at the Climate Summit held at KICC, Nairobi Kenya! Glad to see Nairobi leading from the front in ensuring zero carbon emmissions.",
+      "likes": 100,
+      "phonenumber": "254705669144",
+      "comments": [
+        "Great job!",
+        "Wow!"
+      ]
+    },
+    {
+      "id": 2,
+      "user": "vicwanjala",
+      "image": "https://disrupt-africa.com/wp-content/uploads/2022/11/BasiGo-Bus-in-Operation-1.jpg",
+      "caption": "Had a trip on this beautiful bus today! Amazing!",
+      "likes": 25,
+      "comments": [
+        "Great job!",
+        "Wow!"
+      ]
+    },
+    {
+      "id": 3,
+      "user": "levywesonga",
+      "image": "https://lh3.googleusercontent.com/dlIv0auWex1K1zqN9j7n_cQ1CNGVAtfOD_Mpa7nXm5FXHWXpcspdbLgTUhCSH1rs47qmhQil3Riz26eTF6jIM7RTA3whjY3VTtjYSj9FQw=s750",
+      "caption": "Proud to have boarded the first Electric Matatu. #climatechange #gogreen #BasiGo",
+      "likes": 13,
+      "comments": [
+        "Great job!",
+        "Wow!"
+      ]
+    },
+    {
+      "user": "test@user.com",
+      "phonenumber": "254705669144",
+      "image": "https://images.squarespace-cdn.com/content/v1/60ffc14ddbf8434bedae4209/5ca7f00f-de30-4e73-8965-4af5d2060339/SuperMetroLaunch_homepage.jpg",
+      "caption": "test post",
+      "likes": 100,
+      "comments": [],
+      "id": 4
+    }
+  ]
 }
