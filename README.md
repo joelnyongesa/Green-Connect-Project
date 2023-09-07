@@ -4,4 +4,6 @@
 2. Run `npm install` to install all the dependencies.
 3. Run `npm start` to start the React server.
 4. Run `npm run server` to start the JSON server.
+
+
 [The site is deployed here](https://vercel.com/victorwanjala/green-connect)
