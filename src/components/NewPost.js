@@ -15,6 +15,7 @@ const[caption, setCaption] = useState('')
 
         const newPost = {
             user: userObject.username,
+            phonenumber : userObject.phonenumber,
             image:image,
             caption:caption,
             likes: 0,

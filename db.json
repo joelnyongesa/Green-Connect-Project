@@ -18,6 +18,12 @@
       "phonenumber": "254700794573",
       "password": "1234",
       "id": 3
+    },
+    {
+      "username": "test@user.com",
+      "phonenumber": "254705669144",
+      "password": "1234",
+      "id": 4
     }
   ],
   "posts": [
@@ -26,7 +32,8 @@
       "user": "joeln",
       "image": "https://nnmedia.nation.africa/uploads/2023/09/Cover-2023-09-04T132146.126.png",
       "caption": "Joined President Ruto today at the Climate Summit held at KICC, Nairobi Kenya! Glad to see Nairobi leading from the front in ensuring zero carbon emmissions.",
-      "likes": 108,
+      "likes": 100,
+      "phonenumber": "254705669144",
       "comments": [
         "Great job!",
         "Wow!"
@@ -53,6 +60,15 @@
         "Great job!",
         "Wow!"
       ]
+    },
+    {
+      "user": "test@user.com",
+      "phonenumber": "254705669144",
+      "image": "https://images.squarespace-cdn.com/content/v1/60ffc14ddbf8434bedae4209/5ca7f00f-de30-4e73-8965-4af5d2060339/SuperMetroLaunch_homepage.jpg",
+      "caption": "test post",
+      "likes": 100,
+      "comments": [],
+      "id": 4
     }
   ]
 }
