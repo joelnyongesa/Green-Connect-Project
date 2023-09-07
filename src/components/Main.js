@@ -57,7 +57,7 @@ function Main({posts}){
         setButtonActive({ ...buttonActive, [postId]: !buttonActive[postId] });
         setNoOfLikes({ ...noOfLikes, [postId]: newLikes });
         // console.log(likes)
-        fetch(`http://localhost:8000/posts/${postId}`,
+        fetch(`https://greenapp-api.onrender.com/${postId}`,
         {
             method: "PATCH",
             headers: {
