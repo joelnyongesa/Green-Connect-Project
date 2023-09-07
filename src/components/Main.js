@@ -3,18 +3,15 @@ import {HiUser, HiDotsVertical} from "react-icons/hi"
 import {BiLike, BiChat, BiShare} from 'react-icons/bi'
 
 import { useEffect, useState } from "react";
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 
-function Main(){
-    const [posts, setPosts] = useState([])
+function Main({posts}){
+    const [buttonActive, setButtonActive] = useState(false)
 
-    // fetching the posts
-    useEffect(()=>{
-        fetch('http://localhost:8000/posts')
-        .then(r=>r.json())
-        .then(data => setPosts(data))
-        .catch(e=>console.log(e))
-    }, [])
-    console.log(posts)
+    function handleDisableBtn(){
+        setButtonActive(!buttonActive)
+        
+    }
 
     return(
         <>
@@ -59,7 +56,12 @@ function Main(){
                         },
                     }}
                     >
-                        <Button variant="ghost" leftIcon={<BiLike/>}>{post.likes} Likes</Button>
+                        <Button 
+                        variant="ghost" 
+                        leftIcon={<BiLike/>} 
+                        onClick={handleDisableBtn}
+                        isDisabled={buttonActive ? true : false}
+                        >{post.likes} Likes</Button>
                         <Button variant="ghost" leftIcon={<BiChat/>}>{(post.comments.length)} Comments</Button>
                         <Button variant="ghost" leftIcon={<BiShare/>}> Share</Button>
                     </CardFooter>

@@ -3,14 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Flex, FormControl, Input, Button, FormLabel, Heading, Text } from '@chakra-ui/react';
 
-const Login = () => {
-    const[email, setEmail] = useState('')
+const Login = ({newuser}) => {
+    const[userName, setUserName] = useState('')
     const[password, setPassword] = useState('')
     const navigate = useNavigate()
 
     const handleLogin = (e)=>{
         e.preventDefault()
-        if(email==='test@gmail.com'&& password==='1234'){
+        if(userName===newuser.username && password=== newuser.password){
             navigate('/feed')
         }else{
             alert('Invalid credentials')
@@ -31,8 +31,8 @@ const Login = () => {
             <form onSubmit={handleLogin}>
                 <FormControl isRequired>
                     <Heading textAlign={'center'}>Log In</Heading>
-                    <FormLabel>Email</FormLabel>
-                    <Input type="email" placeholder='email@example.com' value={email} onChange={(e)=>setEmail(e.target.value)} />
+                    <FormLabel>Username</FormLabel>
+                    <Input type="text" placeholder='username' value={userName} onChange={(e)=>setUserName(e.target.value)} />
                     <FormLabel>Password</FormLabel>
                     <Input type="password" placeholder='password' value={password} onChange={(e)=>setPassword(e.target.value)} mb={'1rem'}/>
                     <Button type="submit" colorScheme="#1D3C34" variant={'outline'}>Log In</Button>
