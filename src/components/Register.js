@@ -3,14 +3,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormControl, FormLabel, Input, Button, Heading, Flex } from "@chakra-ui/react";
 
-const Register = () => {
-    const[email, setEmail] = useState('')
+const Register = ({onAddNewUser}) => {
+    const[userName, setUserName] = useState('')
     const[password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('')
     const navigate = useNavigate();
 
 
-    console.log(email, password, confirmPassword);
 
     const handleRegistration = (e)=>{
         e.preventDefault();
@@ -20,6 +20,21 @@ const Register = () => {
         }else{
             alert('Password do not match. Please try again.')
         }
+        
+        const newUser = {
+            username: userName,
+            phonenumber:phoneNumber,
+            password: password
+        }
+
+        fetch(' http://localhost:8000/user_details', {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(newUser)
+        })
+        .then(res=>res.json())
+        .then(data => onAddNewUser(data))
+        .catch(error => console.log(error));
     }
 
     return ( 
@@ -34,8 +49,10 @@ const Register = () => {
             <form onSubmit={handleRegistration}>
                 <FormControl isRequired>
                     <Heading textAlign={'center'}>Register</Heading>
-                    <FormLabel>Email</FormLabel>
-                    <Input type="email" placeholder='email@example.com' value={email} onChange={(e)=>setEmail(e.target.value)} />
+                    <FormLabel>User name</FormLabel>
+                    <Input type="text" placeholder='enter username' value={userName} onChange={(e)=>setUserName(e.target.value)} />
+                    <FormLabel>Phone number</FormLabel>
+                    <Input type="number" placeholder='enter phone number' value={phoneNumber} onChange={(e)=>setPhoneNumber(e.target.value)} />
                     <FormLabel>Password</FormLabel>
                     <Input type="password" placeholder='password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
                     <FormLabel>Confirm Password</FormLabel>

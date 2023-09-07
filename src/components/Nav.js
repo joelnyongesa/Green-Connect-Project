@@ -4,19 +4,15 @@ import {BiCategory, BiWorld, BiHash} from 'react-icons/bi'
 import {SlBadge} from 'react-icons/sl'
 
 
-function Nav(){
-    const [user, setUser] = useState({})
-    useEffect(()=>{
-        fetch('http://localhost:8000/user_details')
-        .then(r=>r.json())
-        .then(data => setUser(data[0]))
-        .catch(e=>console.log(e))
-    }, [])
+function Nav({user}){
+    
+
+   
     return(
             <Card maxW={'xl'} padding={'0'} m={'0rem'} align={'center'} width={'90%'}>
                 <CardBody>
                     <Image
-                        src={user.profile_picture}
+                        src='https://e7.pngegg.com/pngimages/550/997/png-clipart-user-icon-foreigners-avatar-child-face-thumbnail.png'
                         alt={user.name}
                         objectFit='cover'
                         width='70px'
@@ -25,8 +21,8 @@ function Nav(){
                     />
                     <Stack mt={3} spacing={0}>
                         <Heading  fontSize={'md'}>{user.username}</Heading>
-                        <Text fontSize={'xs'} color={'gray.500'}>{user.rank}</Text>
-                        <Text fontSize={'xs'}>{user.location}</Text>
+                        <Text fontSize={'xs'} color={'gray.500'}>Ranger</Text>
+                        <Text fontSize={'xs'}>Nairobi, Kenya</Text>
                     </Stack>
                 </CardBody>
                 <Divider />

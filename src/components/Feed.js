@@ -2,8 +2,24 @@ import {Grid, GridItem, Flex} from '@chakra-ui/react'
 import NewPost from './NewPost';
 import Main from './Main';
 import Nav from './Nav';
+import { useState, useEffect } from 'react';
 
-function Feed(){
+function Feed({user}){
+    const [posts, setPosts] = useState([])
+
+    
+
+    useEffect(()=>{
+        fetch('http://localhost:8000/posts')
+        .then(r=>r.json())
+        .then(data => setPosts(data))
+        .catch(e=>console.log(e))
+    }, [])
+
+    function handleAddPost(post){
+        setPosts([post, ...posts])
+    }
+ 
     return (
         <Grid
         templateAreas={`"nav new-post"
@@ -18,7 +34,7 @@ function Feed(){
         margin='1.25rem'
         >
             <GridItem p='10px' bg='#1D3C34' area={'new-post'} color={'#ffffff'} borderRadius={'0.5rem'}>
-                <NewPost />
+                <NewPost onAddPost = {handleAddPost} userObject={user} />
             </GridItem>
             <GridItem pl='2' bg='#1D3C34' area={'nav'} position={'fixed'} height={'80vh'} width={'25%'} borderRadius={'0.4rem'} mt={'4rem'} >
             <Flex
@@ -27,12 +43,12 @@ function Feed(){
                 alignItems="center"
                 height="100%"
             >
-                <Nav />
+                <Nav user={user}/>
             </Flex>
                 
             </GridItem>
             <GridItem pl='2' bg='#1D3C34' area={'main'} borderRadius={'0.5rem'}>
-                <Main />
+                <Main  posts={posts}/>
             </GridItem>
             <GridItem pl='2' bg='#ffffff' area={'footer'}>
                 <Flex justifyContent={'center'} m={'10px'}>
