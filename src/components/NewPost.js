@@ -38,7 +38,9 @@ const[caption, setCaption] = useState('')
         <form onSubmit={handlePostSubmit} >
             <Flex>
                 <Textarea required placeholder='What have you done today?' onChange={(e)=>setCaption(e.target.value)}/>
-                <Input type="url" placeholder="image address" onChange={(e)=>setImage(e.target.value)}/>
+            </Flex>
+            <Flex>
+                <Input type="url"  width='40%' marginTop='15px' placeholder="image address" onChange={(e)=>setImage(e.target.value)}/>
             </Flex>
             <Flex margin='10px' justifyContent="space-evenly">
                <Button type="submit">POST</Button>
